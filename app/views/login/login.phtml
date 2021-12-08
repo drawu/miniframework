@@ -1,0 +1,34 @@
+<?php
+$v_params = $this->getParams();
+$msg = $v_params['msg'];
+?>
+<br>
+<br>
+<div class="login" align="center">
+    <form class="formulario_login" id="formulario_login" name="formLogin" method="post">
+        <br>
+        <h2>Login</h2>
+        <div>
+            <label>Usuário:</label><br>
+            <!-- para validar o formulario é necessario incluir a class=obrigatorio e definir um title -->
+            <input type="text" name="Usuario" value="" title="Usuario" class="obrigatorio"/>
+        </div>
+        <div>
+            <label>Senha:</label><br>
+            <input type="password" name="Senha" value=""/>
+        </div><br>
+        <input type="hidden" name="controller" value="login" />
+        <input type="hidden" name="action" value="validarLogin" />
+        <input type="submit" value="Entrar" onclick="return validarFormulario('login')"/>
+        <div class="clear"></div>
+    </form><br>
+    <!-- recebe alertas de validacao JS -->
+    <div id="alertas_login" style="color: red;"></div><br>
+    
+    <?php if($msg!=''):?>
+        <div id="msg"><?php echo $msg; ?></div>
+    <?php endif;?>
+        <b>Para testar o sistema use os seguintes usuarios como qualquer senha:</b><br>
+            - <b>teste</b> : vai mostrar como são impressas as variaveis atraves da url amigavel - escreva na url e veja o resultado<br>
+            - <b>tabela</b>: vai imprimir uma tabela( é um plugin gratuito para saber mais leia: <a href="https://datatables.net/" target="blank"> Datatables </a>        
+</div>
